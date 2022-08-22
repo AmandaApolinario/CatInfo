@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C4C74F228A89B3C001E19FA /* BreedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C74F128A89B3C001E19FA /* BreedInfo.swift */; };
+		7CAE0F3C28B3BD6400223FB3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE0F3B28B3BD6400223FB3 /* TableViewController.swift */; };
 		7CBAAE3328A87A8D00811840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3228A87A8D00811840 /* AppDelegate.swift */; };
-		7CBAAE3528A87A8D00811840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3428A87A8D00811840 /* ViewController.swift */; };
+		7CBAAE3528A87A8D00811840 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3428A87A8D00811840 /* EntranceViewController.swift */; };
 		7CBAAE3828A87A8D00811840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3628A87A8D00811840 /* Main.storyboard */; };
 		7CBAAE3A28A87A9100811840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3928A87A9100811840 /* Assets.xcassets */; };
 		7CBAAE3D28A87A9100811840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3B28A87A9100811840 /* LaunchScreen.storyboard */; };
+		7CF809EC28AFC1CA00B2D95A /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF809EA28AFC1CA00B2D95A /* CatCell.swift */; };
+		7CF809ED28AFC1CA00B2D95A /* CatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF809EB28AFC1CA00B2D95A /* CatCell.xib */; };
+		A9C4B997E09561578F25AA8E /* Pods_GatinhoInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatinhoInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatinhoInfo.debug.xcconfig"; path = "Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		7C4C74F128A89B3C001E19FA /* BreedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfo.swift; sourceTree = "<group>"; };
+		7CAE0F3B28B3BD6400223FB3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7CBAAE2F28A87A8D00811840 /* GatinhoInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GatinhoInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBAAE3228A87A8D00811840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7CBAAE3428A87A8D00811840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7CBAAE3428A87A8D00811840 /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
 		7CBAAE3728A87A8D00811840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CBAAE3928A87A9100811840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CBAAE3C28A87A9100811840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CBAAE3E28A87A9100811840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CF809EA28AFC1CA00B2D95A /* CatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
+		7CF809EB28AFC1CA00B2D95A /* CatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatCell.xib; sourceTree = "<group>"; };
+		B3BE295F1C04ABDAFD11A2CC /* Pods-GatinhoInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatinhoInfo.release.xcconfig"; path = "Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C4B997E09561578F25AA8E /* Pods_GatinhoInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AD5D5B7A1CCF8EE8E479FC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */,
+				B3BE295F1C04ABDAFD11A2CC /* Pods-GatinhoInfo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2B01947D8579EFC2ADDDFFEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C4C74F428A89C42001E19FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C4C74F128A89B3C001E19FA /* BreedInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7CBAAE2628A87A8C00811840 = {
 			isa = PBXGroup;
 			children = (
 				7CBAAE3128A87A8D00811840 /* GatinhoInfo */,
 				7CBAAE3028A87A8D00811840 /* Products */,
+				0AD5D5B7A1CCF8EE8E479FC2 /* Pods */,
+				2B01947D8579EFC2ADDDFFEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +95,33 @@
 			isa = PBXGroup;
 			children = (
 				7CBAAE3228A87A8D00811840 /* AppDelegate.swift */,
-				7CBAAE3428A87A8D00811840 /* ViewController.swift */,
-				7CBAAE3628A87A8D00811840 /* Main.storyboard */,
+				7C4C74F428A89C42001E19FA /* Model */,
+				7CBAAE4528A87B2800811840 /* Views */,
+				7CBAAE4628A87B2E00811840 /* Controllers */,
 				7CBAAE3928A87A9100811840 /* Assets.xcassets */,
 				7CBAAE3B28A87A9100811840 /* LaunchScreen.storyboard */,
 				7CBAAE3E28A87A9100811840 /* Info.plist */,
 			);
 			path = GatinhoInfo;
+			sourceTree = "<group>";
+		};
+		7CBAAE4528A87B2800811840 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CBAAE3628A87A8D00811840 /* Main.storyboard */,
+				7CF809EA28AFC1CA00B2D95A /* CatCell.swift */,
+				7CF809EB28AFC1CA00B2D95A /* CatCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CBAAE4628A87B2E00811840 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7CBAAE3428A87A8D00811840 /* EntranceViewController.swift */,
+				7CAE0F3B28B3BD6400223FB3 /* TableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CBAAE4128A87A9100811840 /* Build configuration list for PBXNativeTarget "GatinhoInfo" */;
 			buildPhases = (
+				3B931F45E63BAF90F704619D /* [CP] Check Pods Manifest.lock */,
 				7CBAAE2B28A87A8D00811840 /* Sources */,
 				7CBAAE2C28A87A8D00811840 /* Frameworks */,
 				7CBAAE2D28A87A8D00811840 /* Resources */,
+				E3374CD23EA83B4B8EFB400A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF809ED28AFC1CA00B2D95A /* CatCell.xib in Resources */,
 				7CBAAE3D28A87A9100811840 /* LaunchScreen.storyboard in Resources */,
 				7CBAAE3A28A87A9100811840 /* Assets.xcassets in Resources */,
 				7CBAAE3828A87A8D00811840 /* Main.storyboard in Resources */,
@@ -130,12 +193,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B931F45E63BAF90F704619D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GatinhoInfo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3374CD23EA83B4B8EFB400A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7CBAAE2B28A87A8D00811840 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CBAAE3528A87A8D00811840 /* ViewController.swift in Sources */,
+				7CF809EC28AFC1CA00B2D95A /* CatCell.swift in Sources */,
+				7CBAAE3528A87A8D00811840 /* EntranceViewController.swift in Sources */,
+				7C4C74F228A89B3C001E19FA /* BreedInfo.swift in Sources */,
+				7CAE0F3C28B3BD6400223FB3 /* TableViewController.swift in Sources */,
 				7CBAAE3328A87A8D00811840 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +376,7 @@
 		};
 		7CBAAE4228A87A9100811840 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +394,7 @@
 		};
 		7CBAAE4328A87A9100811840 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3BE295F1C04ABDAFD11A2CC /* Pods-GatinhoInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
