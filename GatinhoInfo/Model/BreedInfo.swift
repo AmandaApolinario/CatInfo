@@ -9,10 +9,10 @@
 import Foundation
 
 struct BreedInfo: Codable{
-    let name: String
-    let description: String
-    let temperament: String
-    let image: Image
+    let name: String?
+    let description: String?
+    let temperament: String?
+    let image: Image?
 }
 
 struct Image: Codable{

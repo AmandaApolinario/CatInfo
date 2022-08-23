@@ -10,57 +10,68 @@ import UIKit
 import Alamofire
 
 class TableViewController: UIViewController {
-
-    let url = "https://api.thecatapi.com/v1/breeds"
     
     @IBOutlet weak var tableView: UITableView!
-    
-    let catsInfo:[BreedInfo] = [
-        BreedInfo(name:"cat 1", description:"docile", temperament:"lala", image: Image(url:"https://cdn2.thecatapi.com/images/7CGV6WVXq.jpg")),
-        BreedInfo(name:"cat 2", description:"angry", temperament:"aaa", image: Image(url:"https://cdn2.thecatapi.com/images/7CGV6WVXq.jpg")),
-        BreedInfo(name:"cat 3", description:"cute", temperament:"teste", image:Image(url:"https://cdn2.thecatapi.com/images/7CGV6WVXq.jpg"))
-    ]
+    var catsInfo:[BreedInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: "CatCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
         
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "CatCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
+        tableView.dataSource = self
         
         fetchBreeds()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    let url = "https://api.thecatapi.com/v1/breeds"
+    
     func fetchBreeds() {
-        //        let decoder: JSONDecoder = {
-        //            let decoder = JSONDecoder()
-        //            return decoder
-        //        }()
+        let decoder = JSONDecoder()
         
         let request = Alamofire.request(url)
         
-        request.responseJSON { (data) in
-            print(data)
+        request.responseJSON { data in
             
+            guard let dataObj = data.data else {
+                return
+            }
+            do{
+                let breedInfo = try decoder.decode([BreedInfo].self, from: dataObj)
+                self.catsInfo = breedInfo
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            catch let ex {
+                print(ex.localizedDescription)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MoreCatInfoViewController {
+          
+            if let n = catsInfo[0].name {
+                destination.name = n
+            }
         }
     }
 }
 
 extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return catsInfo.count
+        print(self.catsInfo.count)
+        return self.catsInfo.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! CatCell
-        
-        cell.breedLabel.text = catsInfo[indexPath.row].name
+        cell.breedLabel.text = self.catsInfo[indexPath.row].name
         return cell
         
     }
@@ -69,6 +80,7 @@ extension TableViewController: UITableViewDataSource {
 extension TableViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        self.performSegue(withIdentifier: "showCatInfo", sender: self) 
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C2306B528B503A90018B105 /* MoreCatInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */; };
 		7C4C74F228A89B3C001E19FA /* BreedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C74F128A89B3C001E19FA /* BreedInfo.swift */; };
 		7CAE0F3C28B3BD6400223FB3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE0F3B28B3BD6400223FB3 /* TableViewController.swift */; };
 		7CBAAE3328A87A8D00811840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3228A87A8D00811840 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatinhoInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatinhoInfo.debug.xcconfig"; path = "Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCatInfoViewController.swift; sourceTree = "<group>"; };
 		7C4C74F128A89B3C001E19FA /* BreedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfo.swift; sourceTree = "<group>"; };
 		7CAE0F3B28B3BD6400223FB3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7CBAAE2F28A87A8D00811840 /* GatinhoInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GatinhoInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 			children = (
 				7CBAAE3428A87A8D00811840 /* EntranceViewController.swift */,
 				7CAE0F3B28B3BD6400223FB3 /* TableViewController.swift */,
+				7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2306B528B503A90018B105 /* MoreCatInfoViewController.swift in Sources */,
 				7CF809EC28AFC1CA00B2D95A /* CatCell.swift in Sources */,
 				7CBAAE3528A87A8D00811840 /* EntranceViewController.swift in Sources */,
 				7C4C74F228A89B3C001E19FA /* BreedInfo.swift in Sources */,
