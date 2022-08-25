@@ -15,17 +15,38 @@ class MoreCatInfoViewController: UIViewController {
     @IBOutlet weak var breedTemperament: UILabel!
     @IBOutlet weak var breedDescription: UILabel!
     
-    var name:String = ""
+    var breed:BreedInfo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        breedName.text = name
+        
+        self.navigationController?.navigationBar.isHidden = false;
+        
+        breedName.text = breed?.name
+        breedTemperament.text = breed?.temperament
+        breedDescription.text = breed?.description
+        
+        guard let imageUrl = breed?.image?.url else {
+            return
+        }
+        catImage.loadFrom(URLAddress:imageUrl)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension UIImageView {
+    func loadFrom(URLAddress: String) {
+        guard let url = URL(string: URLAddress) else {
+            return
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                    self?.image = loadedImage
+                }
+            }
+        }
     }
-
-
 }

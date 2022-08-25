@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GatinhoInfo/Controllers/TableViewController.swift"
-            timestampString = "682988234.504241"
+            timestampString = "683079103.102941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "fetchBreeds()"
             landmarkType = "7">
          </BreakpointContent>

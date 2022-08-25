@@ -17,6 +17,8 @@ class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = false
+        
         tableView.delegate = self
         tableView.register(UINib(nibName: "CatCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
         tableView.dataSource = self
@@ -56,11 +58,11 @@ class TableViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MoreCatInfoViewController {
           
-            if let n = catsInfo[0].name {
-                destination.name = n
-            }
+            destination.breed = catsInfo[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
+    
+    
 }
 
 extension TableViewController: UITableViewDataSource {

@@ -18,10 +18,17 @@ class EntranceViewController: UIViewController {
         checkButton.layer.cornerRadius = 20
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
     @IBAction func CheckCatsButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToTableView", sender: self)
-        
     }
 }
