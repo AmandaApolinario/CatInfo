@@ -13,6 +13,7 @@ class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var catsInfo:[BreedInfo] = []
+    let url = "https://api.thecatapi.com/v1/breeds"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +26,6 @@ class TableViewController: UIViewController {
         
         fetchBreeds()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    let url = "https://api.thecatapi.com/v1/breeds"
     
     func fetchBreeds() {
         let decoder = JSONDecoder()
@@ -45,6 +40,7 @@ class TableViewController: UIViewController {
             do{
                 let breedInfo = try decoder.decode([BreedInfo].self, from: dataObj)
                 self.catsInfo = breedInfo
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -57,7 +53,6 @@ class TableViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MoreCatInfoViewController {
-          
             destination.breed = catsInfo[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
@@ -67,7 +62,6 @@ class TableViewController: UIViewController {
 
 extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        print(self.catsInfo.count)
         return self.catsInfo.count
     }
     
@@ -75,13 +69,11 @@ extension TableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! CatCell
         cell.breedLabel.text = self.catsInfo[indexPath.row].name
         return cell
-        
     }
 }
 
 extension TableViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
         self.performSegue(withIdentifier: "showCatInfo", sender: self) 
     }
 }
