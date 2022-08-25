@@ -29,7 +29,7 @@ class MoreCatInfoViewController: UIViewController {
         breedTemperament.text = safeBreed.temperament
         breedDescription.text = safeBreed.description
         
-        guard let imageUrl = safeBreed.image?.url else {
+        guard let image = safeBreed.image, let imageUrl = image.url else {
             return
         }
         catImage.loadFrom(URLAddress:imageUrl)

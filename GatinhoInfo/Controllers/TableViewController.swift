@@ -53,7 +53,11 @@ class TableViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MoreCatInfoViewController {
-            destination.breed = catsInfo[(tableView.indexPathForSelectedRow?.row)!]
+            
+            guard let index = (tableView.indexPathForSelectedRow?.row) else{
+                return
+            }
+            destination.breed = catsInfo[index]
         }
     }
     
