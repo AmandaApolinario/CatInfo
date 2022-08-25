@@ -22,11 +22,14 @@ class MoreCatInfoViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = false;
         
-        breedName.text = breed?.name
-        breedTemperament.text = breed?.temperament
-        breedDescription.text = breed?.description
+        guard let safeBreed = breed else {
+            return
+        }
+        breedName.text = safeBreed.name
+        breedTemperament.text = safeBreed.temperament
+        breedDescription.text = safeBreed.description
         
-        guard let imageUrl = breed?.image?.url else {
+        guard let imageUrl = safeBreed.image?.url else {
             return
         }
         catImage.loadFrom(URLAddress:imageUrl)
@@ -36,6 +39,7 @@ class MoreCatInfoViewController: UIViewController {
 }
 
 extension UIImageView {
+    
     func loadFrom(URLAddress: String) {
         guard let url = URL(string: URLAddress) else {
             return
