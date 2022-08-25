@@ -26,7 +26,7 @@ class TableViewController: UIViewController {
         
         fetchBreeds()
     }
-
+  
     func fetchBreeds() {
         let decoder = JSONDecoder()
         
@@ -67,7 +67,6 @@ extension TableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! CatCell
         cell.breedLabel.text = self.catsInfo[indexPath.row].name
         return cell
-        
     }
 }
 
