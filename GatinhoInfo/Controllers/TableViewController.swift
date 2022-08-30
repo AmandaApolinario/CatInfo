@@ -12,8 +12,8 @@ import Alamofire
 class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var catsInfo:[BreedInfo] = []
-    let url = "https://api.thecatapi.com/v1/breeds"
+    
+    private var viewModel = TableViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,54 +24,43 @@ class TableViewController: UIViewController {
         tableView.register(UINib(nibName: "CatCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
         tableView.dataSource = self
         
-        fetchBreeds()
-    }
-  
-    func fetchBreeds() {
-        let decoder = JSONDecoder()
+        self.viewModel.fetchBreeds()
+        self.setupViewModel()
         
-        let request = Alamofire.request(url)
-        
-        request.responseJSON { data in
-            
-            guard let dataObj = data.data else {
-                return
-            }
-            do{
-                let breedInfo = try decoder.decode([BreedInfo].self, from: dataObj)
-                self.catsInfo = breedInfo
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-            catch let ex {
-                print(ex.localizedDescription)
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MoreCatInfoViewController {
-            destination.breed = catsInfo[(tableView.indexPathForSelectedRow?.row)!]
+            guard let index = (tableView.indexPathForSelectedRow?.row) else{
+                return
+            }
+            destination.breed = self.viewModel.itemSelected(index)
+        }
+    }
+    
+    private func setupViewModel() {
+        self.viewModel.reloadHandler = {
+            self.tableView.reloadData()
         }
     }
 }
 
 extension TableViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return self.catsInfo.count
+        return self.viewModel.itemCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! CatCell
-        cell.breedLabel.text = self.catsInfo[indexPath.row].name
+        
+        cell.breedLabel.text = self.viewModel.item(indexPath)
         return cell
     }
 }
 
 extension TableViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showCatInfo", sender: self) 
+        self.performSegue(withIdentifier: "showCatInfo", sender: self)
     }
 }
