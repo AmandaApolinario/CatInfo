@@ -26,7 +26,7 @@ class TableViewController: UIViewController {
         
         fetchBreeds()
     }
-    
+  
     func fetchBreeds() {
         let decoder = JSONDecoder()
         
@@ -60,8 +60,6 @@ class TableViewController: UIViewController {
             destination.breed = catsInfo[index]
         }
     }
-    
-    
 }
 
 extension TableViewController: UITableViewDataSource {
@@ -81,5 +79,3 @@ extension TableViewController: UITableViewDelegate{
         self.performSegue(withIdentifier: "showCatInfo", sender: self) 
     }
 }
-
-
