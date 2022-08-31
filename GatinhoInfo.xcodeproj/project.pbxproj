@@ -15,6 +15,7 @@
 		7CBAAE3828A87A8D00811840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3628A87A8D00811840 /* Main.storyboard */; };
 		7CBAAE3A28A87A9100811840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3928A87A9100811840 /* Assets.xcassets */; };
 		7CBAAE3D28A87A9100811840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3B28A87A9100811840 /* LaunchScreen.storyboard */; };
+		7CC37D8A28BE836D00DC0F66 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC37D8928BE836D00DC0F66 /* TableViewModel.swift */; };
 		7CF809EC28AFC1CA00B2D95A /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF809EA28AFC1CA00B2D95A /* CatCell.swift */; };
 		7CF809ED28AFC1CA00B2D95A /* CatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF809EB28AFC1CA00B2D95A /* CatCell.xib */; };
 		A9C4B997E09561578F25AA8E /* Pods_GatinhoInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */; };
@@ -33,6 +34,7 @@
 		7CBAAE3928A87A9100811840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CBAAE3C28A87A9100811840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CBAAE3E28A87A9100811840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CC37D8928BE836D00DC0F66 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		7CF809EA28AFC1CA00B2D95A /* CatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
 		7CF809EB28AFC1CA00B2D95A /* CatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatCell.xib; sourceTree = "<group>"; };
 		B3BE295F1C04ABDAFD11A2CC /* Pods-GatinhoInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatinhoInfo.release.xcconfig"; path = "Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				7CBAAE3228A87A8D00811840 /* AppDelegate.swift */,
 				7C4C74F428A89C42001E19FA /* Model */,
 				7CBAAE4528A87B2800811840 /* Views */,
+				7CC37D8B28BE837100DC0F66 /* ViewModel */,
 				7CBAAE4628A87B2E00811840 /* Controllers */,
 				7CBAAE3928A87A9100811840 /* Assets.xcassets */,
 				7CBAAE3B28A87A9100811840 /* LaunchScreen.storyboard */,
@@ -125,6 +128,14 @@
 				7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7CC37D8B28BE837100DC0F66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7CC37D8928BE836D00DC0F66 /* TableViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C2306B528B503A90018B105 /* MoreCatInfoViewController.swift in Sources */,
+				7CC37D8A28BE836D00DC0F66 /* TableViewModel.swift in Sources */,
 				7CF809EC28AFC1CA00B2D95A /* CatCell.swift in Sources */,
 				7CBAAE3528A87A8D00811840 /* EntranceViewController.swift in Sources */,
 				7C4C74F228A89B3C001E19FA /* BreedInfo.swift in Sources */,
