@@ -22,11 +22,11 @@ class TableViewModel {
     }
     
     func itemSelected(_ index: Int) -> BreedInfo {
-        return self.catsInfo[index]
+        return catsInfo[index]
     }
     
-    func item(_ indexPath: IndexPath) -> String {
-        guard let name = self.catsInfo[indexPath.row].name else{
+    func itemForTableView(_ indexPath: IndexPath) -> String {
+        guard let name = catsInfo[indexPath.row].name else{
             return ""
         }
         return name

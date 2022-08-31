@@ -5,7 +5,6 @@
 //  Created by Inpeaceapp on 22/08/2022.
 //  Copyright © 2022 Amanda. All rights reserved.
 //
-
 import UIKit
 import Alamofire
 
@@ -13,19 +12,19 @@ class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var viewModel = TableViewModel()
+    private let viewModel = TableViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
         
         tableView.delegate = self
         tableView.register(UINib(nibName: "CatCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
         tableView.dataSource = self
         
-        self.viewModel.fetchBreeds()
-        self.setupViewModel()
+        viewModel.fetchBreeds()
+        setupViewModel()
         
     }
     
@@ -34,12 +33,12 @@ class TableViewController: UIViewController {
             guard let index = (tableView.indexPathForSelectedRow?.row) else{
                 return
             }
-            destination.breed = self.viewModel.itemSelected(index)
+            destination.breed = viewModel.itemSelected(index)
         }
     }
     
     private func setupViewModel() {
-        self.viewModel.reloadHandler = {
+        viewModel.reloadHandler = {
             self.tableView.reloadData()
         }
     }
@@ -54,7 +53,7 @@ extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! CatCell
         
-        cell.breedLabel.text = self.viewModel.item(indexPath)
+        cell.breedLabel.text = self.viewModel.itemForTableView(indexPath)
         return cell
     }
 }
