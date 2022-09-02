@@ -23,8 +23,7 @@ class MoreCatInfoViewController: UIViewController {
         
         view.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         navigationController?.navigationBar.barTintColor =  #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
-//        self.navigationController?.navigationBar.isHidden = false;
-//
+        
         guard let safeBreed = breed else {
             return
         }

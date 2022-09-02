@@ -32,22 +32,21 @@ class EntranceViewController: UIViewController {
         checkCatsButton.setTitle("Check Cats", for: .normal)
         checkCatsButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         checkCatsButton.titleLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        checkCatsButton.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 25)
+        checkCatsButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 25)
         checkCatsButton.layer.cornerRadius = 5
-        checkCatsButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
+        checkCatsButton.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
         
         view.addSubview(stackView)
         stackView.addArrangedSubview(labelName)
         stackView.addArrangedSubview(catDrawing)
         stackView.addArrangedSubview(checkCatsButton)
         stackView.axis = .vertical
-        stackView.alignment = .fill
         stackView.spacing = 50.0
         stackView.distribution = .equalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
     }
     
@@ -63,8 +62,7 @@ class EntranceViewController: UIViewController {
     
     @objc func buttonClicked(sender: UIButton){
         let vc = TableViewController()
-        //self.present(vc, animated: true, completion: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

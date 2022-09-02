@@ -10,8 +10,6 @@ import Alamofire
 
 class TableViewController: UIViewController {
     
-    //@IBOutlet weak var tableView: UITableView!
-    
     private let viewModel = TableViewModel()
     let tableView = UITableView()
     
@@ -28,7 +26,7 @@ class TableViewController: UIViewController {
         tableView.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reusableCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "catCellIdentifier")
         
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.barTintColor =  #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
@@ -42,15 +40,6 @@ class TableViewController: UIViewController {
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? MoreCatInfoViewController {
-//            guard let index = (tableView.indexPathForSelectedRow?.row) else{
-//                return
-//            }
-//            destination.breed = viewModel.itemSelected(index)
-//        }
-//    }
-//
     private func setupViewModel() {
         viewModel.reloadHandler = {
             self.tableView.reloadData()
@@ -65,8 +54,7 @@ extension TableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath)
-        //cell.breedLabel.text = self.viewModel.itemForTableView(indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "catCellIdentifier", for: indexPath)
         cell.textLabel?.text = self.viewModel.itemForTableView(indexPath)
         cell.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         return cell
@@ -84,7 +72,6 @@ extension TableViewController: UITableViewDelegate{
         
         let vc = MoreCatInfoViewController()
         vc.breed = selectedCat
-        //self.present(vc, animated: true, completion: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
