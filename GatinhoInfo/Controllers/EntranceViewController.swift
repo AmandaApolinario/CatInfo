@@ -11,11 +11,44 @@ import Alamofire
 
 class EntranceViewController: UIViewController {
    
-    @IBOutlet weak var checkButton: UIButton!
+    let labelName = UILabel()
+    let checkCatsButton = UIButton()
+    let catDrawing = UIImageView(image:#imageLiteral(resourceName: "catDrawingImage"))
+    let stackView = UIStackView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkButton.layer.cornerRadius = 20
+        
+        view.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
+        
+        labelName.text = "CatInfo"
+        labelName.textAlignment = .center
+        labelName.textColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        labelName.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 50)
+        labelName.layer.cornerRadius = 10
+        labelName.layer.masksToBounds = true
+        
+        checkCatsButton.setTitle("Check Cats", for: .normal)
+        checkCatsButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        checkCatsButton.titleLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        checkCatsButton.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 25)
+        checkCatsButton.layer.cornerRadius = 5
+        checkCatsButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
+        
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(labelName)
+        stackView.addArrangedSubview(catDrawing)
+        stackView.addArrangedSubview(checkCatsButton)
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.spacing = 50.0
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,7 +61,10 @@ class EntranceViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    @IBAction func CheckCatsButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToTableView", sender: self)
+    @objc func buttonClicked(sender: UIButton){
+        let vc = TableViewController()
+        //self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+
 }
