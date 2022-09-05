@@ -10,45 +10,64 @@ import UIKit
 import Alamofire
 
 class EntranceViewController: UIViewController {
-   
-    let labelName = UILabel()
-    let checkCatsButton = UIButton()
-    let catDrawing = UIImageView(image:#imageLiteral(resourceName: "catDrawingImage"))
-    let stackView = UIStackView()
 
+    private lazy var labelName: UILabel = {
+        let label = UILabel()
+        label.text = "CatInfo"
+        label.textAlignment = .center
+        label.textColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 50)
+        label.layer.cornerRadius = 10
+        label.layer.masksToBounds = true
+        return label
+    }()
+    
+    private lazy var checkCatsButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Check Cats", for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        button.titleLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 25)
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var catDrawing: UIImageView = {
+        let image = UIImageView(image:#imageLiteral(resourceName: "catDrawingImage"))
+        return image
+    }()
+    
+    private lazy var stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 50.0
+        view.distribution = .equalSpacing
+        view.translatesAutoresizingMaskIntoConstraints = false
+    
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupComponents()
+    }
+    
+    func setupComponents() {
         
         view.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         
-        labelName.text = "CatInfo"
-        labelName.textAlignment = .center
-        labelName.textColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        labelName.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 50)
-        labelName.layer.cornerRadius = 10
-        labelName.layer.masksToBounds = true
-        
-        checkCatsButton.setTitle("Check Cats", for: .normal)
-        checkCatsButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        checkCatsButton.titleLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        checkCatsButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 25)
-        checkCatsButton.layer.cornerRadius = 5
-        checkCatsButton.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
-        
-        view.addSubview(stackView)
         stackView.addArrangedSubview(labelName)
         stackView.addArrangedSubview(catDrawing)
         stackView.addArrangedSubview(checkCatsButton)
-        stackView.axis = .vertical
-        stackView.spacing = 50.0
-        stackView.distribution = .equalSpacing
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(stackView)
         
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
