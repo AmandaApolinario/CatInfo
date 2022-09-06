@@ -33,10 +33,7 @@ class EntranceViewController: UIViewController {
         return button
     }()
     
-    private lazy var catDrawing: UIImageView = {
-        let image = UIImageView(image:#imageLiteral(resourceName: "catDrawingImage"))
-        return image
-    }()
+    private lazy var catDrawing: UIImageView = UIImageView(image:#imageLiteral(resourceName: "catDrawingImage"))
     
     private lazy var stackView: UIStackView = {
         let view = UIStackView()

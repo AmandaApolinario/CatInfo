@@ -77,12 +77,10 @@ class MoreCatInfoViewController: UIViewController {
     }
     
     private func setupBreedInfo(){
-        guard let safeBreed = breed else {
-            return
-        }
-        
-        guard let image = safeBreed.image, let imageUrl = image.url else {
-            return
+        guard let safeBreed = breed,
+            let image = safeBreed.image,
+            let imageUrl = image.url else {
+                return
         }
         
         catImage.loadFrom(URLAddress:imageUrl)
