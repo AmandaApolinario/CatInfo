@@ -34,11 +34,13 @@ class GatinhoInfoTests: XCTestCase {
     }
     
     func testNumeroDeItensDaTableView() {
-//        let viewModel = TableViewModel()
-//        let tableView = TableViewController()
-//        XCTAssertEqual(viewModel.catsInfo.count, tableView.viewModel.itemCount)
-
+        let viewModel: FindBreeds = MockViewModel()
+        let tableViewController = TableViewController(viewModel: viewModel)
+        tableViewController.viewDidLoad()
+        tableViewController.setupComponents()
         
+        XCTAssertEqual(viewModel.itemCount, 3)
+        //XCTAssertEqual(tableViewController.tableView?.numberOfRowsInSection(0), 3)
     }
     
 }

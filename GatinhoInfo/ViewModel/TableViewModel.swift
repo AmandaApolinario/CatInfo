@@ -12,7 +12,7 @@ import Alamofire
 typealias DataHandler = () -> Void
 
 protocol FindBreeds {
-    var reloadHandler: DataHandler { get }
+    var reloadHandler: DataHandler { get set }
     var itemCount: Int { get }
     
     func itemSelected(_ index: Int) -> BreedInfo

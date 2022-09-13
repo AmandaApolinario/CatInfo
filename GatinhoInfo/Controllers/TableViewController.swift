@@ -10,7 +10,16 @@ import Alamofire
 
 class TableViewController: UIViewController {
     
-    private let viewModel = TableViewModel()
+    private var viewModel: FindBreeds
+    
+    init(viewModel: FindBreeds) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
@@ -23,12 +32,12 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupComponents()
         viewModel.fetchBreeds()
+        setupComponents()
+        
     }
     
     func setupComponents() {
-        
         setupTableView()
         setupNavBar()
         setupViewModel()
