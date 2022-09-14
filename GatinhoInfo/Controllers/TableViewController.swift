@@ -21,7 +21,7 @@ class TableViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var tableView: UITableView = {
+    public lazy var tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         table.dataSource = self

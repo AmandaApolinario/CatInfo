@@ -37,10 +37,22 @@ class GatinhoInfoTests: XCTestCase {
         let viewModel: FindBreeds = MockViewModel()
         let tableViewController = TableViewController(viewModel: viewModel)
         tableViewController.viewDidLoad()
-        tableViewController.setupComponents()
+        tableViewController.tableView.reloadData()
         
         XCTAssertEqual(viewModel.itemCount, 3)
-        //XCTAssertEqual(tableViewController.tableView?.numberOfRowsInSection(0), 3)
+        XCTAssertEqual(tableViewController.tableView.numberOfRows(inSection: 0), 3)
+    }
+    
+    func testTituloDaPrimeiraCelulaEstaCorreto(){
+        let viewModel: FindBreeds = MockViewModel()
+        let tableViewController = TableViewController(viewModel: viewModel)
+        tableViewController.viewDidLoad()
+        tableViewController.tableView.reloadData()
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = tableViewController.tableView(tableViewController.tableView, cellForRowAt: indexPath)
+        
+        XCTAssertEqual(cell.textLabel?.text, "cat 1")
     }
     
 }
