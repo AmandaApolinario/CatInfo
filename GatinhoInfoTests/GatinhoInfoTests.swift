@@ -11,19 +11,20 @@ import XCTest
 
 class GatinhoInfoTests: XCTestCase {
     
+    var viewModel: FindBreeds!
+    var tableViewController: TableViewController!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = MockViewModel()
+        tableViewController = TableViewController(viewModel: viewModel)
+        tableViewController.viewDidLoad()
+        tableViewController.tableView.reloadData()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
@@ -34,21 +35,11 @@ class GatinhoInfoTests: XCTestCase {
     }
     
     func testNumeroDeItensDaTableView() {
-        let viewModel: FindBreeds = MockViewModel()
-        let tableViewController = TableViewController(viewModel: viewModel)
-        tableViewController.viewDidLoad()
-        tableViewController.tableView.reloadData()
-        
         XCTAssertEqual(viewModel.itemCount, 3)
         XCTAssertEqual(tableViewController.tableView.numberOfRows(inSection: 0), 3)
     }
     
     func testTituloDaPrimeiraCelulaEstaCorreto(){
-        let viewModel: FindBreeds = MockViewModel()
-        let tableViewController = TableViewController(viewModel: viewModel)
-        tableViewController.viewDidLoad()
-        tableViewController.tableView.reloadData()
-        
         let indexPath = IndexPath(row: 0, section: 0)
         let cell = tableViewController.tableView(tableViewController.tableView, cellForRowAt: indexPath)
         
