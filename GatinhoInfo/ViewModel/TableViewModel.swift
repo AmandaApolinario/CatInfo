@@ -11,7 +11,16 @@ import Alamofire
 
 typealias DataHandler = () -> Void
 
-class TableViewModel {
+protocol FindBreeds {
+    var reloadHandler: DataHandler { get set }
+    var itemCount: Int { get }
+    
+    func itemSelected(_ index: Int) -> BreedInfo
+    func itemForTableView(_ indexPath: IndexPath) -> String
+    func fetchBreeds()
+}
+
+class TableViewModel: FindBreeds {
     
     var catsInfo:[BreedInfo] = []
     var reloadHandler: DataHandler = { }

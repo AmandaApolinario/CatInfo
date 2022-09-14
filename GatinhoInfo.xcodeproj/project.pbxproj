@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7C2306B528B503A90018B105 /* MoreCatInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */; };
+		7C493AF928CF6FC500B8EE2E /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */; };
 		7C4C74F228A89B3C001E19FA /* BreedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C74F128A89B3C001E19FA /* BreedInfo.swift */; };
 		7CA36FBB28C0FAB600B70147 /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA36FBA28C0FAB600B70147 /* CatCell.swift */; };
 		7CA36FC328C781CE00B70147 /* GatinhoInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA36FC228C781CE00B70147 /* GatinhoInfoTests.swift */; };
@@ -34,6 +35,7 @@
 		29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatinhoInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatinhoInfo.debug.xcconfig"; path = "Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCatInfoViewController.swift; sourceTree = "<group>"; };
+		7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
 		7C4C74F128A89B3C001E19FA /* BreedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfo.swift; sourceTree = "<group>"; };
 		7CA36FBA28C0FAB600B70147 /* CatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
 		7CA36FC028C781CE00B70147 /* GatinhoInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GatinhoInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 			children = (
 				7CA36FC228C781CE00B70147 /* GatinhoInfoTests.swift */,
 				7CA36FC428C781CE00B70147 /* Info.plist */,
+				7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */,
 			);
 			path = GatinhoInfoTests;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C493AF928CF6FC500B8EE2E /* MockViewModel.swift in Sources */,
 				7CA36FC328C781CE00B70147 /* GatinhoInfoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
