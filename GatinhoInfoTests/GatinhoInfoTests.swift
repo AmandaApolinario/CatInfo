@@ -23,7 +23,8 @@ class GatinhoInfoTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
+        tableViewController = nil
         super.tearDown()
     }
     
@@ -34,7 +35,7 @@ class GatinhoInfoTests: XCTestCase {
         }
     }
     
-    func testNumeroDeItensDaTableView() {
+    func testNumeroDeItensDaTableViewEIgualAoDaViewModel() {
         XCTAssertEqual(viewModel.itemCount, 3)
         XCTAssertEqual(tableViewController.tableView.numberOfRows(inSection: 0), 3)
     }
@@ -44,6 +45,24 @@ class GatinhoInfoTests: XCTestCase {
         let cell = tableViewController.tableView(tableViewController.tableView, cellForRowAt: indexPath)
         
         XCTAssertEqual(cell.textLabel?.text, "cat 1")
+    }
+    
+    func testFetchBreedsRetornaTrue() {
+        viewModel.fetchBreeds{success in
+            XCTAssertTrue(success)
+        }
+    }
+    
+    func testVerificaRetornoDosItemsDoProtocol(){
+        viewModel.fetchBreeds{success in
+            self.tableViewController.tableView.reloadData()
+        }
+        let indexPath = IndexPath(row: 1, section: 0)
+        
+        XCTAssertEqual(viewModel.itemCount, 3)
+        XCTAssertEqual(viewModel.itemSelected(0).name, "cat 1")
+        XCTAssertEqual(viewModel.itemForTableView(indexPath), "cat 2")
+        
     }
     
 }
