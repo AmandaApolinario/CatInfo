@@ -9,21 +9,17 @@
 import Foundation
 import Alamofire
 
-typealias DataHandler = () -> Void
-
 protocol FindBreeds {
-    var reloadHandler: DataHandler { get set }
     var itemCount: Int { get }
     
     func itemSelected(_ index: Int) -> BreedInfo
     func itemForTableView(_ indexPath: IndexPath) -> String
-    func fetchBreeds()
+    func fetchBreeds(completion: @escaping (Bool) -> Void)
 }
 
 class TableViewModel: FindBreeds {
     
     var catsInfo:[BreedInfo] = []
-    var reloadHandler: DataHandler = { }
     let url = "https://api.thecatapi.com/v1/breeds"
     
     var itemCount: Int {
@@ -41,10 +37,11 @@ class TableViewModel: FindBreeds {
         return name
     }
     
-    func fetchBreeds() {
+    func fetchBreeds(completion: @escaping (Bool) -> Void) {
         let decoder = JSONDecoder()
         
         let request = Alamofire.request(url)
+        
         
         request.responseJSON { data in
             
@@ -55,10 +52,11 @@ class TableViewModel: FindBreeds {
                 let breedInfo = try decoder.decode([BreedInfo].self, from: dataObj)
                 self.catsInfo = breedInfo
                 
-                self.reloadHandler()
+                completion(true)
             }
             catch let ex {
                 print(ex.localizedDescription)
+                completion(false)
             }
         }
     }

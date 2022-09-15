@@ -32,7 +32,9 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchBreeds()
+        viewModel.fetchBreeds{ success in
+            self.tableView.reloadData()
+        }
         setupComponents()
         
     }
@@ -40,7 +42,6 @@ class TableViewController: UIViewController {
     func setupComponents() {
         setupTableView()
         setupNavBar()
-        setupViewModel()
         
     }
     
@@ -61,11 +62,6 @@ class TableViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
     }
 
-    private func setupViewModel() {
-        viewModel.reloadHandler = {
-            self.tableView.reloadData()
-        }
-    }
 }
 
 extension TableViewController: UITableViewDataSource {
