@@ -10,9 +10,18 @@ import Alamofire
 
 class TableViewController: UIViewController {
     
-    private let viewModel = TableViewModel()
+    private var viewModel: FindBreeds
     
-    private lazy var tableView: UITableView = {
+    init(viewModel: FindBreeds) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public lazy var tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         table.dataSource = self
@@ -23,15 +32,16 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.fetchBreeds{ success in
+            self.tableView.reloadData()
+        }
         setupComponents()
-        viewModel.fetchBreeds()
+        
     }
     
     func setupComponents() {
-        
         setupTableView()
         setupNavBar()
-        setupViewModel()
         
     }
     
@@ -52,11 +62,6 @@ class TableViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
     }
 
-    private func setupViewModel() {
-        viewModel.reloadHandler = {
-            self.tableView.reloadData()
-        }
-    }
 }
 
 extension TableViewController: UITableViewDataSource {

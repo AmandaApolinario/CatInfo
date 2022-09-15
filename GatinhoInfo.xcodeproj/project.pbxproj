@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7C2306B528B503A90018B105 /* MoreCatInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */; };
+		7C493AF928CF6FC500B8EE2E /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */; };
 		7C4C74F228A89B3C001E19FA /* BreedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C74F128A89B3C001E19FA /* BreedInfo.swift */; };
 		7CA36FBB28C0FAB600B70147 /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA36FBA28C0FAB600B70147 /* CatCell.swift */; };
+		7CA36FC328C781CE00B70147 /* GatinhoInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA36FC228C781CE00B70147 /* GatinhoInfoTests.swift */; };
 		7CAE0F3C28B3BD6400223FB3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE0F3B28B3BD6400223FB3 /* TableViewController.swift */; };
 		7CBAAE3328A87A8D00811840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3228A87A8D00811840 /* AppDelegate.swift */; };
 		7CBAAE3528A87A8D00811840 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3428A87A8D00811840 /* EntranceViewController.swift */; };
@@ -19,12 +21,26 @@
 		A9C4B997E09561578F25AA8E /* Pods_GatinhoInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7CA36FC528C781CE00B70147 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CBAAE2728A87A8D00811840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CBAAE2E28A87A8D00811840;
+			remoteInfo = GatinhoInfo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatinhoInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatinhoInfo.debug.xcconfig"; path = "Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCatInfoViewController.swift; sourceTree = "<group>"; };
+		7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
 		7C4C74F128A89B3C001E19FA /* BreedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfo.swift; sourceTree = "<group>"; };
 		7CA36FBA28C0FAB600B70147 /* CatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
+		7CA36FC028C781CE00B70147 /* GatinhoInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GatinhoInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA36FC228C781CE00B70147 /* GatinhoInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatinhoInfoTests.swift; sourceTree = "<group>"; };
+		7CA36FC428C781CE00B70147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CAE0F3B28B3BD6400223FB3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7CBAAE2F28A87A8D00811840 /* GatinhoInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GatinhoInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBAAE3228A87A8D00811840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7CA36FBD28C781CE00B70147 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CBAAE2C28A87A8D00811840 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,10 +96,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7CA36FC128C781CE00B70147 /* GatinhoInfoTests */ = {
+			isa = PBXGroup;
+			children = (
+				7CA36FC228C781CE00B70147 /* GatinhoInfoTests.swift */,
+				7CA36FC428C781CE00B70147 /* Info.plist */,
+				7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */,
+			);
+			path = GatinhoInfoTests;
+			sourceTree = "<group>";
+		};
 		7CBAAE2628A87A8C00811840 = {
 			isa = PBXGroup;
 			children = (
 				7CBAAE3128A87A8D00811840 /* GatinhoInfo */,
+				7CA36FC128C781CE00B70147 /* GatinhoInfoTests */,
 				7CBAAE3028A87A8D00811840 /* Products */,
 				0AD5D5B7A1CCF8EE8E479FC2 /* Pods */,
 				2B01947D8579EFC2ADDDFFEC /* Frameworks */,
@@ -87,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				7CBAAE2F28A87A8D00811840 /* GatinhoInfo.app */,
+				7CA36FC028C781CE00B70147 /* GatinhoInfoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +170,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7CA36FBF28C781CE00B70147 /* GatinhoInfoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CA36FC928C781CE00B70147 /* Build configuration list for PBXNativeTarget "GatinhoInfoTests" */;
+			buildPhases = (
+				7CA36FBC28C781CE00B70147 /* Sources */,
+				7CA36FBD28C781CE00B70147 /* Frameworks */,
+				7CA36FBE28C781CE00B70147 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CA36FC628C781CE00B70147 /* PBXTargetDependency */,
+			);
+			name = GatinhoInfoTests;
+			productName = GatinhoInfoTests;
+			productReference = 7CA36FC028C781CE00B70147 /* GatinhoInfoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7CBAAE2E28A87A8D00811840 /* GatinhoInfo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CBAAE4128A87A9100811840 /* Build configuration list for PBXNativeTarget "GatinhoInfo" */;
@@ -164,6 +217,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Amanda;
 				TargetAttributes = {
+					7CA36FBF28C781CE00B70147 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 7CBAAE2E28A87A8D00811840;
+					};
 					7CBAAE2E28A87A8D00811840 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -183,11 +240,19 @@
 			projectRoot = "";
 			targets = (
 				7CBAAE2E28A87A8D00811840 /* GatinhoInfo */,
+				7CA36FBF28C781CE00B70147 /* GatinhoInfoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7CA36FBE28C781CE00B70147 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CBAAE2D28A87A8D00811840 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +297,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7CA36FBC28C781CE00B70147 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C493AF928CF6FC500B8EE2E /* MockViewModel.swift in Sources */,
+				7CA36FC328C781CE00B70147 /* GatinhoInfoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CBAAE2B28A87A8D00811840 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +322,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7CA36FC628C781CE00B70147 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CBAAE2E28A87A8D00811840 /* GatinhoInfo */;
+			targetProxy = 7CA36FC528C781CE00B70147 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		7CBAAE3B28A87A9100811840 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -260,6 +342,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7CA36FC728C781CE00B70147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GatinhoInfoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = amanda.GatinhoInfoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GatinhoInfo.app/GatinhoInfo";
+			};
+			name = Debug;
+		};
+		7CA36FC828C781CE00B70147 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GatinhoInfoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = amanda.GatinhoInfoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GatinhoInfo.app/GatinhoInfo";
+			};
+			name = Release;
+		};
 		7CBAAE3F28A87A9100811840 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -413,6 +533,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7CA36FC928C781CE00B70147 /* Build configuration list for PBXNativeTarget "GatinhoInfoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CA36FC728C781CE00B70147 /* Debug */,
+				7CA36FC828C781CE00B70147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7CBAAE2A28A87A8D00811840 /* Build configuration list for PBXProject "GatinhoInfo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -77,7 +77,9 @@ class EntranceViewController: UIViewController {
     }
     
     @objc func buttonClicked(sender: UIButton){
-        let vc = TableViewController()
+        let viewModel:FindBreeds = TableViewModel()
+        
+        let vc = TableViewController(viewModel: viewModel)
         navigationController?.pushViewController(vc, animated: true)
     }
 
