@@ -49,7 +49,6 @@ class GatinhoInfoTests: XCTestCase {
     
     func testFetchBreedsRetornaTrue() {
         viewModel.fetchBreeds{success in
-            self.tableViewController.tableView.reloadData()
             XCTAssertTrue(success)
         }
     }
