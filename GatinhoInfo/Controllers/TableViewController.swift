@@ -6,7 +6,6 @@
 //  Copyright © 2022 Amanda. All rights reserved.
 //
 import UIKit
-import Alamofire
 
 class TableViewController: UIViewController {
     

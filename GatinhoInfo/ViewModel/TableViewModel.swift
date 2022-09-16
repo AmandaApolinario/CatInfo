@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 protocol FindBreeds {
     var itemCount: Int { get }
@@ -20,7 +19,7 @@ protocol FindBreeds {
 class TableViewModel: FindBreeds {
     
     var catsInfo:[BreedInfo] = []
-    let url = "https://api.thecatapi.com/v1/breeds"
+    let urlString = "https://api.thecatapi.com/v1/breeds"
     
     var itemCount: Int {
         return self.catsInfo.count
@@ -38,26 +37,38 @@ class TableViewModel: FindBreeds {
     }
     
     func fetchBreeds(completion: @escaping (Bool) -> Void) {
-        let decoder = JSONDecoder()
+
+      let decoder = JSONDecoder()
+      let url = URL(string: urlString)
+      guard let requestUrl = url else { fatalError() }
+
+      var request = URLRequest(url: requestUrl)
+      request.httpMethod = "GET"
+
+      let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+
+          if let error = error {
+              print("Erro na requisição: \(error)")
+              return
+          }
+
+          guard let data = data else {
+            return
+          }
+
+          do{
+              let breedInfo = try decoder.decode([BreedInfo].self, from: data)
+              self.catsInfo = breedInfo
+
+              completion(true)
+          }
         
-        let request = Alamofire.request(url)
-        
-        
-        request.responseJSON { data in
-            
-            guard let dataObj = data.data else {
-                return
-            }
-            do{
-                let breedInfo = try decoder.decode([BreedInfo].self, from: dataObj)
-                self.catsInfo = breedInfo
-                
-                completion(true)
-            }
-            catch let ex {
-                print(ex.localizedDescription)
-                completion(false)
-            }
-        }
+          catch let ex {
+              print(ex.localizedDescription)
+              completion(false)
+          }
+      }
+      task.resume()
+
     }
 }
