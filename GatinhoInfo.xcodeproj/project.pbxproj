@@ -18,7 +18,6 @@
 		7CBAAE3A28A87A9100811840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3928A87A9100811840 /* Assets.xcassets */; };
 		7CBAAE3D28A87A9100811840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBAAE3B28A87A9100811840 /* LaunchScreen.storyboard */; };
 		7CC37D8A28BE836D00DC0F66 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC37D8928BE836D00DC0F66 /* TableViewModel.swift */; };
-		A9C4B997E09561578F25AA8E /* Pods_GatinhoInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatinhoInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatinhoInfo.debug.xcconfig"; path = "Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCatInfoViewController.swift; sourceTree = "<group>"; };
 		7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
 		7C4C74F128A89B3C001E19FA /* BreedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfo.swift; sourceTree = "<group>"; };
@@ -49,7 +46,6 @@
 		7CBAAE3C28A87A9100811840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CBAAE3E28A87A9100811840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CC37D8928BE836D00DC0F66 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
-		B3BE295F1C04ABDAFD11A2CC /* Pods-GatinhoInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatinhoInfo.release.xcconfig"; path = "Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,30 +60,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C4B997E09561578F25AA8E /* Pods_GatinhoInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0AD5D5B7A1CCF8EE8E479FC2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */,
-				B3BE295F1C04ABDAFD11A2CC /* Pods-GatinhoInfo.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		2B01947D8579EFC2ADDDFFEC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29CCB2EEBF6A005AF0F761D6 /* Pods_GatinhoInfo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7C4C74F428A89C42001E19FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +90,6 @@
 				7CBAAE3128A87A8D00811840 /* GatinhoInfo */,
 				7CA36FC128C781CE00B70147 /* GatinhoInfoTests */,
 				7CBAAE3028A87A8D00811840 /* Products */,
-				0AD5D5B7A1CCF8EE8E479FC2 /* Pods */,
-				2B01947D8579EFC2ADDDFFEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,11 +168,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CBAAE4128A87A9100811840 /* Build configuration list for PBXNativeTarget "GatinhoInfo" */;
 			buildPhases = (
-				3B931F45E63BAF90F704619D /* [CP] Check Pods Manifest.lock */,
 				7CBAAE2B28A87A8D00811840 /* Sources */,
 				7CBAAE2C28A87A8D00811840 /* Frameworks */,
 				7CBAAE2D28A87A8D00811840 /* Resources */,
-				E3374CD23EA83B4B8EFB400A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,15 +188,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = Amanda;
 				TargetAttributes = {
 					7CA36FBF28C781CE00B70147 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = "";
 						TestTargetID = 7CBAAE2E28A87A8D00811840;
 					};
 					7CBAAE2E28A87A8D00811840 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = "";
 					};
 				};
 			};
@@ -263,38 +239,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3B931F45E63BAF90F704619D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GatinhoInfo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E3374CD23EA83B4B8EFB400A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GatinhoInfo/Pods-GatinhoInfo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7CA36FBC28C781CE00B70147 /* Sources */ = {
@@ -355,7 +299,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = amanda.GatinhoInfoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GatinhoInfo.app/GatinhoInfo";
 			};
@@ -374,7 +318,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = amanda.GatinhoInfoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GatinhoInfo.app/GatinhoInfo";
 			};
@@ -406,6 +350,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -431,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -466,6 +411,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -485,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -496,7 +442,6 @@
 		};
 		7CBAAE4228A87A9100811840 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38D3402D9C2CC4B2342D9B72 /* Pods-GatinhoInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -507,14 +452,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = amanda.GatinhoInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		7CBAAE4328A87A9100811840 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3BE295F1C04ABDAFD11A2CC /* Pods-GatinhoInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -525,7 +469,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = amanda.GatinhoInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

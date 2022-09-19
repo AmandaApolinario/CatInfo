@@ -6,7 +6,6 @@
 //  Copyright © 2022 Amanda. All rights reserved.
 //
 import UIKit
-import Alamofire
 
 class TableViewController: UIViewController {
     
@@ -59,7 +58,7 @@ class TableViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.barTintColor =  #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+      navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
     }
 
 }
