@@ -42,9 +42,8 @@ class GatinhoInfoTests: XCTestCase {
     
     func testTituloDaPrimeiraCelulaEstaCorreto(){
         let indexPath = IndexPath(row: 0, section: 0)
-        let cell = tableViewController.tableView(tableViewController.tableView, cellForRowAt: indexPath)
-        
-        XCTAssertEqual(cell.textLabel?.text, "cat 1")
+      
+        XCTAssertEqual(viewModel.itemForTableView(indexPath), "cat 1")
     }
     
     func testFetchBreedsRetornaTrue() {

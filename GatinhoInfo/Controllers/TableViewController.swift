@@ -10,7 +10,7 @@ import UIKit
 class TableViewController: UIViewController {
     
     private var viewModel: FindBreeds
-    
+
     init(viewModel: FindBreeds) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -24,7 +24,7 @@ class TableViewController: UIViewController {
         let table = UITableView()
         table.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         table.dataSource = self
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "catCellIdentifier")
+        table.register(TableViewCell.self, forCellReuseIdentifier: "animalCellIdentifier")
         table.delegate = self
         return table
     }()
@@ -32,7 +32,9 @@ class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchBreeds{ success in
+          DispatchQueue.main.async {
             self.tableView.reloadData()
+          }
         }
         setupComponents()
         
@@ -58,7 +60,7 @@ class TableViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.barTintColor =  #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         navigationController?.navigationBar.isTranslucent = false
-      navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
     }
 
 }
@@ -70,9 +72,9 @@ extension TableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "catCellIdentifier", for: indexPath)
-        cell.textLabel?.text = self.viewModel.itemForTableView(indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "animalCellIdentifier", for: indexPath) as? TableViewCell else { fatalError() }
         cell.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
+        cell.setup(name: self.viewModel.itemForTableView(indexPath))
         return cell
     }
 }
