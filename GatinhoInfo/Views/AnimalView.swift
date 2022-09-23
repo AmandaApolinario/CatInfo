@@ -67,7 +67,7 @@ class AnimalView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func configure(name: String, description: String? = "", temperament: String? = "", image: String? = "") {
+  func configure(name: String, description: String? = nil, temperament: String? = nil, image: String? = nil) {
     breedName.text = name
     breedDescription.text = description
     breedTemperament.text = temperament
@@ -104,23 +104,4 @@ class AnimalView: UIView {
     ])
   }
   
-}
-
-extension UIImageView {
-
-  func loadFrom(URLAddress: String) {
-    guard let url = URL(string: URLAddress) else {
-      return
-    }
-
-    DispatchQueue.global(qos: .userInitiated).async(){
-      if let imageData = try? Data(contentsOf: url) {
-        DispatchQueue.main.async { [weak self] in
-          if let loadedImage = UIImage(data: imageData) {
-            self?.image = loadedImage
-          }
-        }
-      }
-    }
-  }
 }

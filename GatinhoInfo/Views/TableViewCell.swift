@@ -32,14 +32,6 @@ class TableViewCell: UITableViewCell {
       animalCell.configure(name:name, description: "", temperament: "",image: "")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
-    override func layoutMarginsDidChange() {
-        super.layoutMarginsDidChange()
-    }
-
   func setContraints(){
     NSLayoutConstraint.activate([
       animalCell.topAnchor.constraint(equalTo: topAnchor),
