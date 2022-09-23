@@ -10,7 +10,13 @@ import UIKit
 
 class AnimalView: UIView {
 
-  private var animalView:UIView = UIView()
+  private var animalView: UIScrollView = {
+    let view = UIScrollView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.showsVerticalScrollIndicator = false
+    view.showsHorizontalScrollIndicator = false
+    return view
+  }()
 
   private lazy var breedName: UILabel = {
     let label = UILabel()
@@ -58,11 +64,12 @@ class AnimalView: UIView {
     return view
   }()
 
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupComponents()
   }
-  
+
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -75,7 +82,7 @@ class AnimalView: UIView {
       return
     }
     breedImage.loadFrom(URLAddress:image)
-    
+
   }
 
   func setupComponents() {
@@ -93,15 +100,24 @@ class AnimalView: UIView {
 
   func setupContraints(){
     NSLayoutConstraint.activate([
-      stackView.topAnchor.constraint(equalTo: topAnchor),
-      stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      stackView.topAnchor.constraint(equalTo: animalView.topAnchor),
+      stackView.leadingAnchor.constraint(equalTo: animalView.leadingAnchor),
+      stackView.trailingAnchor.constraint(equalTo: animalView.trailingAnchor),
+      stackView.bottomAnchor.constraint(equalTo: animalView.bottomAnchor),
+      stackView.widthAnchor.constraint(equalTo: animalView.widthAnchor),
+      stackView.centerXAnchor.constraint(equalTo: animalView.centerXAnchor),
 
-      breedImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-      breedImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
-      breedImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
-      breedImage.bottomAnchor.constraint(equalTo:stackView.safeAreaLayoutGuide.bottomAnchor, constant: -32)
+      breedImage.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
+      breedImage.heightAnchor.constraint(equalToConstant: 200),
+      breedImage.widthAnchor.constraint(equalToConstant: 220),
+      breedImage.bottomAnchor.constraint(equalTo:stackView.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+
+      animalView.topAnchor.constraint(equalTo: topAnchor),
+      animalView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      animalView.widthAnchor.constraint(equalTo: widthAnchor),
+      animalView.centerXAnchor.constraint(equalTo: centerXAnchor),
+
     ])
   }
-  
+
 }
