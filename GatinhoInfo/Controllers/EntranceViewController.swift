@@ -53,7 +53,7 @@ class EntranceViewController: UIViewController {
     func setupComponents() {
         
         view.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
-        
+
         stackView.addArrangedSubview(labelName)
         stackView.addArrangedSubview(catDrawing)
         stackView.addArrangedSubview(checkCatsButton)
