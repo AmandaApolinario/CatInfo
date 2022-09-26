@@ -71,7 +71,7 @@ class AnimalView: UIView {
   }
 
   required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    fatalError(Contants.errorMessages.initNotImplemented)
   }
 
   func configure(name: String, description: String? = nil, temperament: String? = nil, image: String? = nil) {
