@@ -36,8 +36,8 @@ class GatinhoInfoTests: XCTestCase {
     }
     
     func testNumeroDeItensDaTableViewEIgualAoDaViewModel() {
-        XCTAssertEqual(viewModel.itemCount, 3)
-        XCTAssertEqual(tableViewController.tableView.numberOfRows(inSection: 0), 3)
+        XCTAssertEqual(viewModel.itemCount, 6)
+        XCTAssertEqual(tableViewController.tableView.numberOfRows(inSection: 0), 6)
     }
     
     func testTituloDaPrimeiraCelulaEstaCorreto(){
@@ -58,10 +58,20 @@ class GatinhoInfoTests: XCTestCase {
         }
         let indexPath = IndexPath(row: 1, section: 0)
         
-        XCTAssertEqual(viewModel.itemCount, 3)
+        XCTAssertEqual(viewModel.itemCount, 6)
         XCTAssertEqual(viewModel.itemSelected(0).name, "cat 1")
         XCTAssertEqual(viewModel.itemForTableView(indexPath), "cat 2")
         
     }
+
+  func testVerificaSeAViewEGenerica(){
+    viewModel.fetchBreeds{success in
+      self.tableViewController.tableView.reloadData()
+    }
+    let indexPath = IndexPath(row: 4, section: 0)
+    XCTAssertEqual(viewModel.itemForTableView(indexPath), "Golden Retriever")
+
+    XCTAssertEqual(viewModel.itemSelected(5).name, "Chow Chow")
+  }
     
 }
