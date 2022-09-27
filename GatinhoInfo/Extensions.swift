@@ -26,3 +26,14 @@ extension UIImageView {
     }
   }
 }
+
+public extension String {
+  func localize(tableName: String? = nil, bundle: Bundle = Bundle.main, comment: String = "") -> String {
+    return NSLocalizedString(
+      self,
+      tableName: tableName,
+      bundle: bundle,
+      value: "",
+      comment: comment)
+  }
+}

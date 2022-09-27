@@ -25,7 +25,7 @@ class TableViewCell: UITableViewCell {
   }
 
   required init?(coder: NSCoder) {
-    fatalError(NSLocalizedString("InitNotImplemented", comment: ""))
+    fatalError("InitNotImplemented".localize())
   }
 
     func setup(name: String) {
