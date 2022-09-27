@@ -12,10 +12,10 @@ class EntranceViewController: UIViewController {
 
     private lazy var labelName: UILabel = {
         let label = UILabel()
-        label.text = "CatInfo"
+      label.text = NSLocalizedString("AppName", comment: "")
         label.textAlignment = .center
         label.textColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 50)
+      label.font = UIFont(name: NSLocalizedString("EntranceFont", comment: "") , size: 50)
         label.layer.cornerRadius = 10
         label.layer.masksToBounds = true
         return label
@@ -23,10 +23,10 @@ class EntranceViewController: UIViewController {
     
     private lazy var checkCatsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Check Cats", for: .normal)
+      button.setTitle(NSLocalizedString("EntranceButtonText", comment: ""), for: .normal)
         button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         button.titleLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold" , size: 25)
+      button.titleLabel?.font = UIFont(name: NSLocalizedString("EntranceButtonText", comment: "") , size: 25)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
         return button

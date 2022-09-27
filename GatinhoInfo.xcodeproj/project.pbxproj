@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E141DF628DDD6CD003746F4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E141DF528DDD6CD003746F4 /* Extensions.swift */; };
+		6E22B5B128E1E8DC0058BBED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E22B5B328E1E8DC0058BBED /* Localizable.strings */; };
 		6EB8D91E28D9DEEA0030B4D5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8D91D28D9DEEA0030B4D5 /* TableViewCell.swift */; };
 		7C2306B528B503A90018B105 /* MoreCatInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */; };
 		7C493AF928CF6FC500B8EE2E /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */; };
@@ -34,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		6E141DF528DDD6CD003746F4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6E22B5B228E1E8DC0058BBED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6E22B5B428E1F2190058BBED /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6EB8D91D28D9DEEA0030B4D5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7C2306B428B503A90018B105 /* MoreCatInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCatInfoViewController.swift; sourceTree = "<group>"; };
 		7C493AF828CF6FC500B8EE2E /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 				7CBAAE3B28A87A9100811840 /* LaunchScreen.storyboard */,
 				7CBAAE3E28A87A9100811840 /* Info.plist */,
 				6E141DF528DDD6CD003746F4 /* Extensions.swift */,
+				6E22B5B328E1E8DC0058BBED /* Localizable.strings */,
 			);
 			path = GatinhoInfo;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 7CBAAE2628A87A8C00811840;
 			productRefGroup = 7CBAAE3028A87A8D00811840 /* Products */;
@@ -240,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CBAAE3D28A87A9100811840 /* LaunchScreen.storyboard in Resources */,
+				6E22B5B128E1E8DC0058BBED /* Localizable.strings in Resources */,
 				7CBAAE3A28A87A9100811840 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +289,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6E22B5B328E1E8DC0058BBED /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E22B5B228E1E8DC0058BBED /* en */,
+				6E22B5B428E1F2190058BBED /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7CBAAE3B28A87A9100811840 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -336,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -397,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

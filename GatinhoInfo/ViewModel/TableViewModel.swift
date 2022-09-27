@@ -19,8 +19,7 @@ protocol FindBreeds {
 class TableViewModel: FindBreeds {
     
     var catsInfo:[BreedInfo] = []
-    let urlString = "https://api.thecatapi.com/v1/breeds"
-    
+  let urlString = NSLocalizedString("UrlDaAPI", comment: "")
     var itemCount: Int {
         return self.catsInfo.count
     }
@@ -43,12 +42,12 @@ class TableViewModel: FindBreeds {
       guard let requestUrl = url else { fatalError() }
 
       var request = URLRequest(url: requestUrl)
-      request.httpMethod = "GET"
+      request.httpMethod = NSLocalizedString("get", comment: "")
 
       let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
 
           if let error = error {
-              print("Erro na requisição: \(error)")
+            print(NSLocalizedString("RequestError", comment: "") + "\(error)")
               return
           }
 
