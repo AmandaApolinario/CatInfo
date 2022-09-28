@@ -17,14 +17,14 @@ class TableViewController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError(NSLocalizedString("InitNotImplemented", comment: ""))
+      fatalError(StringsEnum.InitNotImplemented.localize())
     }
     
     public lazy var tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         table.dataSource = self
-      table.register(TableViewCell.self, forCellReuseIdentifier: NSLocalizedString("AnimalCellIdentifier", comment: ""))
+      table.register(TableViewCell.self, forCellReuseIdentifier: StringsEnum.AnimalCellIdentifier.localize())
         table.delegate = self
         return table
     }()
@@ -72,7 +72,7 @@ extension TableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: NSLocalizedString("AnimalCellIdentifier", comment: ""), for: indexPath) as? TableViewCell else { fatalError() }
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: StringsEnum.AnimalCellIdentifier.localize(), for: indexPath) as? TableViewCell else { fatalError() }
         cell.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         cell.setup(name: self.viewModel.itemForTableView(indexPath))
         return cell
