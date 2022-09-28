@@ -19,20 +19,20 @@ class TableViewCell: UITableViewCell {
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-  
+
     addSubview(animalCell)
     setContraints()
   }
 
   required init?(coder: NSCoder) {
-    fatalError(StringsEnum.InitNotImplemented.localize())
+    fatalError(StringsEnum.initNotImplemented.localize())
   }
 
     func setup(name: String) {
-      animalCell.configure(name:name)
+      animalCell.configure(name: name)
     }
 
-  func setContraints(){
+  func setContraints() {
     NSLayoutConstraint.activate([
       animalCell.topAnchor.constraint(equalTo: topAnchor),
       animalCell.leadingAnchor.constraint(equalTo: leadingAnchor),

@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct BreedInfo: Codable{
+struct BreedInfo: Codable {
     let name: String?
     let description: String?
     let temperament: String?
     let image: Image?
 }
 
-struct Image: Codable{
+struct Image: Codable {
     let url: String?
 }

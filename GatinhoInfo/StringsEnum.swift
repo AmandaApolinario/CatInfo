@@ -8,18 +8,18 @@
 
 import Foundation
 
-enum StringsEnum : String {
-    case AppName
-    case EntranceButtonText
-    case EntranceFont
-    case UrlDaAPI
-    case AnimalCellIdentifier
+enum StringsEnum: String {
+    case appName
+    case entranceButtonText
+    case entranceFont
+    case urlDaAPI
+    case animalCellIdentifier
 
     case get
     case post
     case put
     case delete
 
-    case RequestError
-    case InitNotImplemented
+    case requestError
+    case initNotImplemented
 }

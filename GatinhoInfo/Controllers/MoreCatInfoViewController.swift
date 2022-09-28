@@ -10,8 +10,8 @@ import UIKit
 
 class MoreCatInfoViewController: UIViewController {
 
-    var breed:BreedInfo?
-  
+    var breed: BreedInfo?
+
   private lazy var animalView: AnimalView = {
     let view = AnimalView()
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,7 @@ class MoreCatInfoViewController: UIViewController {
     view.addSubview(animalView)
     setupComponents()
   }
-    
+
   func setupComponents() {
 
     view.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
@@ -39,14 +39,16 @@ class MoreCatInfoViewController: UIViewController {
 
   }
 
-  private func setupBreedInfo(){
+  private func setupBreedInfo() {
     guard let safeBreed = breed,
           let image = safeBreed.image,
           let imageUrl = image.url else {
       return
     }
 
-    guard let name = safeBreed.name, let description = safeBreed.description, let temperament = safeBreed.temperament else{
+    guard let name = safeBreed.name,
+          let description = safeBreed.description,
+          let temperament = safeBreed.temperament else {
       return
     }
     animalView.configure(name: name, description: description, temperament: temperament, image: imageUrl)
