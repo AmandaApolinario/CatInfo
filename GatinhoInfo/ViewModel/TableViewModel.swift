@@ -7,57 +7,61 @@
 //
 
 import Foundation
-import Alamofire
 
 protocol FindBreeds {
     var itemCount: Int { get }
-    
     func itemSelected(_ index: Int) -> BreedInfo
     func itemForTableView(_ indexPath: IndexPath) -> String
     func fetchBreeds(completion: @escaping (Bool) -> Void)
 }
 
 class TableViewModel: FindBreeds {
-    
-    var catsInfo:[BreedInfo] = []
-    let url = "https://api.thecatapi.com/v1/breeds"
-    
+    var catsInfo: [BreedInfo] = []
+  let urlString = StringsEnum.urlDaAPI.localize()
     var itemCount: Int {
         return self.catsInfo.count
     }
-    
     func itemSelected(_ index: Int) -> BreedInfo {
         return catsInfo[index]
     }
-    
     func itemForTableView(_ indexPath: IndexPath) -> String {
-        guard let name = catsInfo[indexPath.row].name else{
+        guard let name = catsInfo[indexPath.row].name else {
             return ""
         }
         return name
     }
-    
+
     func fetchBreeds(completion: @escaping (Bool) -> Void) {
-        let decoder = JSONDecoder()
-        
-        let request = Alamofire.request(url)
-        
-        
-        request.responseJSON { data in
-            
-            guard let dataObj = data.data else {
-                return
-            }
-            do{
-                let breedInfo = try decoder.decode([BreedInfo].self, from: dataObj)
-                self.catsInfo = breedInfo
-                
-                completion(true)
-            }
-            catch let ex {
-                print(ex.localizedDescription)
-                completion(false)
-            }
-        }
+
+      let decoder = JSONDecoder()
+      let url = URL(string: urlString)
+      guard let requestUrl = url else { fatalError() }
+
+      var request = URLRequest(url: requestUrl)
+      request.httpMethod = StringsEnum.get.localize()
+
+      let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+
+          if let error = error {
+            print(StringsEnum.requestError.localize() + "\(error)")
+              return
+          }
+
+          guard let data = data else {
+            return
+          }
+
+          do {
+              let breedInfo = try decoder.decode([BreedInfo].self, from: data)
+              self.catsInfo = breedInfo
+
+              completion(true)
+          } catch let exep {
+              print(exep.localizedDescription)
+              completion(false)
+          }
+      }
+      task.resume()
+
     }
 }

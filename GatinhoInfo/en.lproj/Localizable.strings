@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  GatinhoInfo
+
+  Created by Amanda Brito Apolinário on 26/09/22.
+  Copyright © 2022 Amanda. All rights reserved.
+*/
+
+"appName" = "CatInfo";
+"entranceButtonText" = "Check Cats";
+"entranceFont" = "AppleSDGothicNeo-Bold";
+"urlDaAPI" = "https://api.thecatapi.com/v1/breeds";
+"animalCellIdentifier" = "animalCellIdentifier";
+
+"get" = "GET";
+"post" = "POST";
+"put" = "PUT";
+"delete" = "DELETE";
+
+"requestError" = "Error in request:";
+"initNotImplemented" = "init(coder:) has not been implemented";
