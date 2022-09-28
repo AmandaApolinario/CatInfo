@@ -72,7 +72,8 @@ extension TableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: StringsEnum.animalCellIdentifier.localize(), for: indexPath) as? TableViewCell else { fatalError() }
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: StringsEnum.animalCellIdentifier.localize(),
+        for: indexPath) as? TableViewCell else { fatalError() }
         cell.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.9764705882, alpha: 1)
         cell.setup(name: self.viewModel.itemForTableView(indexPath))
         return cell

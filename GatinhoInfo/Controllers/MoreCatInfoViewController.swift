@@ -46,7 +46,9 @@ class MoreCatInfoViewController: UIViewController {
       return
     }
 
-    guard let name = safeBreed.name, let description = safeBreed.description, let temperament = safeBreed.temperament else {
+    guard let name = safeBreed.name,
+          let description = safeBreed.description,
+          let temperament = safeBreed.temperament else {
       return
     }
     animalView.configure(name: name, description: description, temperament: temperament, image: imageUrl)
