@@ -64,14 +64,13 @@ class AnimalView: UIView {
     return view
   }()
 
-
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupComponents()
   }
 
   required init?(coder: NSCoder) {
-    fatalError(StringsEnum.InitNotImplemented.localize())
+    fatalError(StringsEnum.initNotImplemented.localize())
   }
 
   func configure(name: String, description: String? = nil, temperament: String? = nil, image: String? = nil) {
@@ -81,8 +80,7 @@ class AnimalView: UIView {
     guard let image = image else {
       return
     }
-    breedImage.loadFrom(URLAddress:image)
-
+    breedImage.loadFrom(URLAddress: image)
   }
 
   func setupComponents() {
@@ -98,7 +96,7 @@ class AnimalView: UIView {
     setupContraints()
   }
 
-  func setupContraints(){
+  func setupContraints() {
     NSLayoutConstraint.activate([
       stackView.topAnchor.constraint(equalTo: animalView.topAnchor),
       stackView.leadingAnchor.constraint(equalTo: animalView.leadingAnchor),
@@ -110,12 +108,12 @@ class AnimalView: UIView {
       breedImage.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
       breedImage.heightAnchor.constraint(equalToConstant: 200),
       breedImage.widthAnchor.constraint(equalToConstant: 220),
-      breedImage.bottomAnchor.constraint(equalTo:stackView.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+      breedImage.bottomAnchor.constraint(equalTo: stackView.safeAreaLayoutGuide.bottomAnchor, constant: -32),
 
       animalView.topAnchor.constraint(equalTo: topAnchor),
       animalView.bottomAnchor.constraint(equalTo: bottomAnchor),
       animalView.widthAnchor.constraint(equalTo: widthAnchor),
-      animalView.centerXAnchor.constraint(equalTo: centerXAnchor),
+      animalView.centerXAnchor.constraint(equalTo: centerXAnchor)
 
     ])
   }

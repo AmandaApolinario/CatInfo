@@ -15,7 +15,7 @@ extension UIImageView {
       return
     }
 
-    DispatchQueue.global(qos: .userInitiated).async(){
+    DispatchQueue.global(qos: .userInitiated).async {
       if let imageData = try? Data(contentsOf: url) {
         DispatchQueue.main.async { [weak self] in
           if let loadedImage = UIImage(data: imageData) {

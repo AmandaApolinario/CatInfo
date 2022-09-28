@@ -6,16 +6,16 @@
   Copyright © 2022 Amanda. All rights reserved.
 */
 
-"AppName" = "GatoInfo";
-"EntranceButtonText" = "Olhe os Gatos";
-"EntranceFont" = "AppleSDGothicNeo-Bold";
-"UrlDaAPI" = "https://api.thecatapi.com/v1/breeds";
-"AnimalCellIdentifier" = "animalCellIdentifier";
+"appName" = "GatoInfo";
+"entranceButtonText" = "Olhe os Gatos";
+"entranceFont" = "AppleSDGothicNeo-Bold";
+"urlDaAPI" = "https://api.thecatapi.com/v1/breeds";
+"animalCellIdentifier" = "animalCellIdentifier";
 
 "get" = "GET";
 "post" = "POST";
 "put" = "PUT";
 "delete" = "DELETE";
 
-"RequestError" = "Erro na requisição:";
-"InitNotImplemented" = "init(coder:) nao foi implementado";
+"requestError" = "Erro na requisição:";
+"initNotImplemented" = "init(coder:) nao foi implementado";

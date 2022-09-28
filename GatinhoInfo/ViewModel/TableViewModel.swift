@@ -10,31 +10,27 @@ import Foundation
 
 protocol FindBreeds {
     var itemCount: Int { get }
-    
     func itemSelected(_ index: Int) -> BreedInfo
     func itemForTableView(_ indexPath: IndexPath) -> String
     func fetchBreeds(completion: @escaping (Bool) -> Void)
 }
 
 class TableViewModel: FindBreeds {
-    
-    var catsInfo:[BreedInfo] = []
-  let urlString = StringsEnum.UrlDaAPI.localize()
+    var catsInfo: [BreedInfo] = []
+  let urlString = StringsEnum.urlDaAPI.localize()
     var itemCount: Int {
         return self.catsInfo.count
     }
-    
     func itemSelected(_ index: Int) -> BreedInfo {
         return catsInfo[index]
     }
-    
     func itemForTableView(_ indexPath: IndexPath) -> String {
-        guard let name = catsInfo[indexPath.row].name else{
+        guard let name = catsInfo[indexPath.row].name else {
             return ""
         }
         return name
     }
-    
+
     func fetchBreeds(completion: @escaping (Bool) -> Void) {
 
       let decoder = JSONDecoder()
@@ -44,10 +40,10 @@ class TableViewModel: FindBreeds {
       var request = URLRequest(url: requestUrl)
       request.httpMethod = StringsEnum.get.localize()
 
-      let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+      let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
 
           if let error = error {
-            print(StringsEnum.RequestError.localize() + "\(error)")
+            print(StringsEnum.requestError.localize() + "\(error)")
               return
           }
 
@@ -55,15 +51,13 @@ class TableViewModel: FindBreeds {
             return
           }
 
-          do{
+          do {
               let breedInfo = try decoder.decode([BreedInfo].self, from: data)
               self.catsInfo = breedInfo
 
               completion(true)
-          }
-        
-          catch let ex {
-              print(ex.localizedDescription)
+          } catch let exep {
+              print(exep.localizedDescription)
               completion(false)
           }
       }
