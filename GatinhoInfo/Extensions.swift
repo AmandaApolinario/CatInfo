@@ -27,10 +27,11 @@ extension UIImageView {
   }
 }
 
-public extension String {
+extension StringsEnum {
   func localize(tableName: String? = nil, bundle: Bundle = Bundle.main, comment: String = "") -> String {
+    let str = self.rawValue
     return NSLocalizedString(
-      self,
+      str,
       tableName: tableName,
       bundle: bundle,
       value: "",

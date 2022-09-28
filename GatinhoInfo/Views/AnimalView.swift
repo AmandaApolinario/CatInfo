@@ -71,7 +71,7 @@ class AnimalView: UIView {
   }
 
   required init?(coder: NSCoder) {
-    fatalError(StringsEnum.InitNotImplemented.rawValue.localize())
+    fatalError(StringsEnum.InitNotImplemented.localize())
   }
 
   func configure(name: String, description: String? = nil, temperament: String? = nil, image: String? = nil) {

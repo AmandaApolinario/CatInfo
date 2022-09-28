@@ -25,7 +25,7 @@ class TableViewCell: UITableViewCell {
   }
 
   required init?(coder: NSCoder) {
-    fatalError(StringsEnum.InitNotImplemented.rawValue.localize())
+    fatalError(StringsEnum.InitNotImplemented.localize())
   }
 
     func setup(name: String) {

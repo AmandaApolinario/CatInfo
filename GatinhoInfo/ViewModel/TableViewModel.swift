@@ -19,7 +19,7 @@ protocol FindBreeds {
 class TableViewModel: FindBreeds {
     
     var catsInfo:[BreedInfo] = []
-  let urlString = StringsEnum.UrlDaAPI.rawValue.localize()
+  let urlString = StringsEnum.UrlDaAPI.localize()
     var itemCount: Int {
         return self.catsInfo.count
     }
@@ -42,12 +42,12 @@ class TableViewModel: FindBreeds {
       guard let requestUrl = url else { fatalError() }
 
       var request = URLRequest(url: requestUrl)
-      request.httpMethod = StringsEnum.get.rawValue.localize()
+      request.httpMethod = StringsEnum.get.localize()
 
       let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
 
           if let error = error {
-            print(StringsEnum.RequestError.rawValue.localize() + "\(error)")
+            print(StringsEnum.RequestError.localize() + "\(error)")
               return
           }
 
